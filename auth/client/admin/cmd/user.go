@@ -32,7 +32,6 @@ var GetUserCmd = &cobra.Command{
 
 		conn, err := grpc.NewClient(adminCmdConfig.Server, opts...)
 		if err != nil {
-
 		}
 		defer conn.Close()
 	},

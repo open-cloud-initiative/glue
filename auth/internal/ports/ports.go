@@ -13,6 +13,4 @@ type ReadTx interface {
 }
 
 // WriteTx is the interface for read-write transactions.
-type WriteTx interface {
-	ReadTx
-}
+type WriteTx interface{}

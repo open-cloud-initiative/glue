@@ -8,8 +8,11 @@ import (
 
 // Flags contains the command line flags.
 type Flags struct {
-	Addr        string `envconfig:"TAGS_ADDR" default:":4040"`
+	// Addr ...
+	Addr string `envconfig:"TAGS_ADDR" default:":4040"`
+	// DatabaseURI ...
 	DatabaseURI string `envconfig:"TAGS_DATABASE_URI" default:""`
+	// Environment ...
 	Environment string `envconfig:"TAGS_ENV" default:"production"`
 }
 

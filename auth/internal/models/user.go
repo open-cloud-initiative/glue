@@ -2,6 +2,8 @@ package models
 
 import (
 	"time"
+
+	"github.com/google/uuid"
 )
 
 // MFAFactorType is an enum of the allowed types.
@@ -21,7 +23,7 @@ const (
 // User represents a user in the system.
 type User struct {
 	// Id of the user.
-	Id string `json:"id" gorm:"primaryKey;unique;type:uuid;column:id;default:gen_random_uuid()"`
+	Id uuid.UUID `json:"id" gorm:"primaryKey;unique;type:uuid;column:id;default:gen_random_uuid()"`
 	// Role is the role of the user.
 	Role string `json:"role" gorm:"type:string"`
 	// Email is the email of the user.

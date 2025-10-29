@@ -18,5 +18,6 @@ func NewUserController(store dbx.Database[ports.ReadTx, ports.WriteTx]) *UserCon
 }
 
 // GetUser retrieves a user by ID.
-func (uc *UserController) GetUser(ctx fiber.Ctx) {
+func (uc *UserController) GetUser(ctx fiber.Ctx) error {
+	return nil
 }

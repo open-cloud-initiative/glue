@@ -4,9 +4,12 @@ go 1.25.1
 
 require (
 	github.com/gofiber/fiber/v3 v3.0.0-rc.1
+	github.com/google/go-github/v56 v56.0.0
+	github.com/google/uuid v1.6.0
 	github.com/katallaxie/pkg v0.7.9
 	github.com/kelseyhightower/envconfig v1.4.0
 	github.com/spf13/cobra v1.10.1
+	golang.org/x/oauth2 v0.30.0
 	google.golang.org/grpc v1.76.0
 	gorm.io/driver/postgres v1.6.0
 	gorm.io/gorm v1.31.0
@@ -16,7 +19,7 @@ require (
 	github.com/andybalholm/brotli v1.2.0 // indirect
 	github.com/gofiber/schema v1.6.0 // indirect
 	github.com/gofiber/utils/v2 v2.0.0-rc.1 // indirect
-	github.com/google/uuid v1.6.0 // indirect
+	github.com/google/go-querystring v1.1.0 // indirect
 	github.com/inconshreveable/mousetrap v1.1.0 // indirect
 	github.com/jackc/pgpassfile v1.0.0 // indirect
 	github.com/jackc/pgservicefile v0.0.0-20240606120523-5a60cdf6a761 // indirect

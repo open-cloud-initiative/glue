@@ -25,7 +25,7 @@ func NewReadTx() dbx.ReadTxFactory[ports.ReadTx] {
 
 // GetUser retrieves a user by ID.
 func (r *readTxImpl) GetUser(ctx context.Context, user *models.User) error {
-	return r.conn.WithContext(ctx).First(user, "id = ?", user.Id).Error
+	return r.conn.WithContext(ctx).First(user, "id = ?", user.ID).Error
 }
 
 // GetAccount retrieves an external account by ID.

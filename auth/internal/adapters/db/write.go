@@ -35,18 +35,18 @@ func (w *writeTxImpl) UpdateUser(ctx context.Context, user *models.User) error {
 
 // DeleteUser deletes a user by ID.
 func (w *writeTxImpl) DeleteUser(ctx context.Context, user *models.User) error {
-	return w.conn.WithContext(ctx).Delete(user, "id = ?", user.Id).Error
+	return w.conn.WithContext(ctx).Delete(user, "id = ?", user.ID).Error
 }
 
 // LinkAccount links an external account to a user.
 func (w *writeTxImpl) LinkAccount(ctx context.Context, account *models.Account, user *models.User) error {
-	account.UserID = &user.Id
+	account.UserID = &user.ID
 	return w.conn.WithContext(ctx).Save(account).Error
 }
 
 // UnlinkAccount unlinks an external account from a user.
 func (w *writeTxImpl) UnlinkAccount(ctx context.Context, account *models.Account, user *models.User) error {
-	if account.UserID == nil || *account.UserID != user.Id {
+	if account.UserID == nil || *account.UserID != user.ID {
 		return gorm.ErrRecordNotFound
 	}
 	account.UserID = nil

@@ -22,18 +22,22 @@ const (
 
 // User represents a user in the system.
 type User struct {
-	// Id of the user.
-	Id uuid.UUID `json:"id" gorm:"primaryKey;unique;type:uuid;column:id;default:gen_random_uuid()"`
+	// ID is the unique identifier of the user.
+	ID uuid.UUID `json:"id" gorm:"primaryKey;unique;type:uuid;column:id;default:gen_random_uuid()"`
 	// Role is the role of the user.
 	Role string `json:"role" gorm:"type:string"`
 	// Email is the email of the user.
 	Email string `json:"email" gorm:"type:string"`
+	// Name of the user.
+	Name string `json:"name" gorm:"type:string"`
 	// Email verified at.
 	EmailVerifiedAt time.Time
 	// Phone number of the user.
 	PhoneNumber string
 	// Phone number verified at.
 	PhoneNumberVerifiedAt time.Time
+	// Image is the URL of the user's image.
+	Image string `json:"image_url" gorm:"type:string"`
 	// Confirmation at.
 	ConfirmedAt time.Time
 	// Confirmation send at.
@@ -60,4 +64,6 @@ type User struct {
 	Identities []*Identity `protobuf:"bytes,18,rep,name=identities,proto3" json:"identities,omitempty"`
 	// MFA factors.
 	MfaFactors []*MFAFactor
+	// Accounts associated with the user.
+	Accounts []Account `protobuf:"bytes,19,rep,name=accounts,proto3" json:"accounts,omitempty"`
 }
